@@ -36,7 +36,8 @@
             <param name="enc_counts_per_rev">3436</param>
  -->    
             <param name="example_param_hw_start_duration_sec">0</param>
-            <param name="example_param_hw_stop_duration_sec">3.0</param>
+            <param name="example_param_hw_stop_duration_sec">3</param>
+            
     
         </hardware>
 
