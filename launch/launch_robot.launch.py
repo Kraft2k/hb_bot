@@ -72,3 +72,5 @@ def generate_launch_description():
         delayed_joint_broad_spawner
     ])
 
+    IncludeLaunchDescription( [ThisLaunchFileDir(), '/camera_robot.py'])
+

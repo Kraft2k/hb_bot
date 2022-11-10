@@ -1,6 +1,6 @@
 gamepad_node:
   ros__parameters:
-    device_id: 1
+    device_id: 0
     deadzone: 0.05
     autorepeat_rate: 20.0
 
@@ -9,9 +9,9 @@ teleop_node:
     axis_linear:
       x: 1
     scale_linear:
-      x: 2.0
+      x: 4.25
     scale_linear_turbo:
-      x: 4.0
+      x: 8.5
 
     axis_angular:
       yaw: 0
