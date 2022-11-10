@@ -64,14 +64,16 @@ def generate_launch_description():
         )
     )
 
+    camera_launch_file = os.path.join(get_package_share_directory(package_name),'launch','camera_robot.launch.py')
+
     # Launch them all!
     return LaunchDescription([
         rsp,
         delayed_controller_manager,
         delayed_diff_drive_spawner,
-        delayed_joint_broad_spawner
+        delayed_joint_broad_spawner,
      
-        IncludeLaunchDescription( [ThisLaunchFileDir(), '/camera_robotlaunch.py'])
+        IncludeLaunchDescription( camera_launch_file)
    ])
 
 
