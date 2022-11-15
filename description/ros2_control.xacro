@@ -37,6 +37,8 @@
  -->    
             <param name="example_param_hw_start_duration_sec">0</param>
             <param name="example_param_hw_stop_duration_sec">3</param>
+            <param name="example_param_hw_slowdown">0</param>
+            <param name="hoverboard_port">"/dev/ttyUSB1"</param>
             
     
         </hardware>
