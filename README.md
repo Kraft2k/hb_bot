@@ -39,35 +39,51 @@ sudo usermod -aG video andrew
 // Add ROS image transports
 sudo apt install ros-humble-image-transport-plugins
 
-// Check camera
-vcgencmd get_camera
-// Use to stream camera from pi - test
-raspistill -k
-// Check video for linux
-v4l2-ctl --list-devices
-  
-//Run ROS camera standalone  
-ros2 run v4l2_camera v4l2_camera_node --ros-args -p image_size:="[640,480]" -p camera_fram_id:=camera_link_optical
+Check camera
+>vcgencmd get_camera
 
-// ROS image viewer
-ros2 run rqt_image_view rqt_image_view
+Use to stream camera from pi - test
+>raspistill -k
+
+Check video for linux
+>v4l2-ctl --list-devices
+  
+Run ROS camera standalone  
+>ros2 run v4l2_camera v4l2_camera_node --ros-args -p image_size:="[640,480]" -p camera_fram_id:=camera_link_optical
+
+ROS image viewer
+>ros2 run rqt_image_view rqt_image_view
 
 Lidar
 =====
 Build YLidar SDK
 ----------------
-git clone https://github.com/YDLIDAR/YDLidar-SDK.git
-cd YDLidar-SDK/
-ls
-mkdir build
-cd build
-cmake ..
-make
-sudo make install
+
+>git clone https://github.com/YDLIDAR/YDLidar-SDK.git
+>cd YDLidar-SDK/
+>ls
+>mkdir build
+>cd build
+>cmake ..
+>make
+>sudo make install
 
 Download ROS2 driver for YLidar
 -------------------------------
-git clone https://github.com/rekabuk/ydlidar_ros2_driver.git
+>git clone https://github.com/rekabuk/ydlidar_ros2_driver.git
+
+
+FoxGlove
+========
+>sudo apt install ros-humble-rosbridge-suite
+
+run ROS2 bridge
+>ros2 run rosbridge_server rosbridge_websocket
+
+Run ROS2 bridge with debug
+>ros2 run rosbridge_server rosbridge_websocket DEBUG=ros2-web-bridge* node bin/rosbridge.js
+
+>ros2 run rosapi rosapi_node
 
 
 
