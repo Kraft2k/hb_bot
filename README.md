@@ -1,19 +1,15 @@
-## Robot Package Template
 
-This is a GitHub template. You can make your own copy by clicking the green "Use this template" button.
+This is a hoverboard robot inspired by the work of https://github.com/EFeru/hoverboard-firmware-hack-FOC and his modifications to the hoverboard controller.
+Also to Norbert for his work https://homofaciens.de/technics-robots-R15-construction_en.htm and help with the CAD
+And finally the great videos by Josh Newans https://www.youtube.com/c/ArticulatedRobotics which got me from zero to a working ROS2 robot in about 5wks!
 
-It is recommended that you keep the repo/package name the same, but if you do change it, ensure you do a "Find all" using your IDE (or the built-in GitHub IDE by hitting the `.` key) and rename all instances of `my_bot` to whatever your project's name is.
-
-Note that each directory currently has at least one file in it to ensure that git tracks the files (and, consequently, that a fresh clone has direcctories present for CMake to find). These example files can be removed if required (and the directories can be removed if `CMakeLists.txt` is adjusted accordingly).
-
+Thank-you to all you guys!
 
 
-// On bot run
-ros2 launch hb_bot launch_robot.launch.py
 
-// On host run
-ros2 launch hb_bot gamepad.launch.py
-
+Useful Notes
+============
+More for my own memory than anything else!
 
 
 sudo apt install ros-humble-ros2-control ros-humble-ros2-controllers
@@ -22,13 +18,19 @@ sudo apt install ros-humble-xacro
 colcon build --symlink-install 
 colcon build --symlink-install --packages-select ros2_hoverboard_hardware
 
-ros2 run teleop_twist_keyboard teleop_twist_keyboard -r /cmd_vel:=/diff_cont/cmd_vel_unstamped
+
+On bot run
+>ros2 launch hb_bot launch_robot.launch.py
+
+On host run
+>ros2 launch hb_bot gamepad.launch.py
+
+Run Teleop twist stand alone
+>ros2 run teleop_twist_keyboard teleop_twist_keyboard -r /cmd_vel:=/diff_cont/cmd_vel_unstamped
 
 
-pi
-===
-Enable camera
--------------
+PI camera
+=========
 
 // Add ROS camera driver
 sudo apt install libraspberrypi-bin v4l-utils ros-humble-v4l2-camera
