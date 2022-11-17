@@ -12,11 +12,11 @@ Useful Notes
 More for my own memory than anything else!
 
 
-sudo apt install ros-humble-ros2-control ros-humble-ros2-controllers
-sudo apt install ros-humble-xacro
+>sudo apt install ros-humble-ros2-control ros-humble-ros2-controllers
+>sudo apt install ros-humble-xacro
 
-colcon build --symlink-install 
-colcon build --symlink-install --packages-select ros2_hoverboard_hardware
+>colcon build --symlink-install 
+>colcon build --symlink-install --packages-select ros2_hoverboard_hardware
 
 
 On bot run
@@ -32,14 +32,14 @@ Run Teleop twist stand alone
 PI camera
 =========
 
-// Add ROS camera driver
-sudo apt install libraspberrypi-bin v4l-utils ros-humble-v4l2-camera
+Add ROS camera driver
+>sudo apt install libraspberrypi-bin v4l-utils ros-humble-v4l2-camera
 
-// Add to video group
-sudo usermod -aG video andrew
+Add to video group
+>sudo usermod -aG video andrew
 
-// Add ROS image transports
-sudo apt install ros-humble-image-transport-plugins
+Add ROS image transports
+>sudo apt install ros-humble-image-transport-plugins
 
 Check camera
 >vcgencmd get_camera
