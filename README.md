@@ -1,7 +1,7 @@
 
-This is a hoverboard robot inspired by the work of https://github.com/EFeru/hoverboard-firmware-hack-FOC and his modifications to the hoverboard controller.
-Also to Norbert for his work https://homofaciens.de/technics-robots-R15-construction_en.htm and help with the CAD
-And finally the great videos by Josh Newans https://www.youtube.com/c/ArticulatedRobotics which got me from zero to a working ROS2 robot in about 5wks!
+<p>This is a hoverboard robot inspired by the work of https://github.com/EFeru/hoverboard-firmware-hack-FOC and his modifications to the hoverboard controller.<br>
+Also to Norbert for his work https://homofaciens.de/technics-robots-R15-construction_en.htm and help with the CAD.<br>
+And finally the great videos by Josh Newans https://www.youtube.com/c/ArticulatedRobotics which got me from zero to a working ROS2 robot in about 5wks!<br></p>
 
 Thank-you to all you guys!
 
