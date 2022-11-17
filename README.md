@@ -61,14 +61,13 @@ Lidar
 Build YLidar SDK
 ----------------
 
->git clone https://github.com/YDLIDAR/YDLidar-SDK.git
->cd YDLidar-SDK/
->ls
->mkdir build
->cd build
->cmake ..
->make
->sudo make install
+>git clone https://github.com/YDLIDAR/YDLidar-SDK.git<br>
+>cd YDLidar-SDK/<br>
+>mkdir build<br>
+>cd build<br>
+>cmake ..<br>
+>make<br>
+>sudo make install<br>
 
 Download ROS2 driver for YLidar
 -------------------------------
