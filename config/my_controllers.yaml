@@ -34,10 +34,10 @@ diff_cont:
     # pose_covariance_diagonal: x
     # twist_covariance_diagonal: x
     # open_loop: x
-    # enable_odom_tf: x
+    enable_odom_tf: true
 
     # cmd_vel_timeout: x
-    # publish_limited_velocity: x
+    publish_limited_velocity: true
     # velocity_rolling_window_size: x
     
 

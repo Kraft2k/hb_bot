@@ -11,6 +11,8 @@ Useful Notes
 ============
 More for my own memory than anything else!
 
+ROS2 Install
+>https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
 
 >sudo apt install ros-humble-ros2-control ros-humble-ros2-controllers
 >sudo apt install ros-humble-xacro
@@ -81,9 +83,8 @@ FoxGlove
 run ROS2 bridge
 >ros2 run rosbridge_server rosbridge_websocket
 
-Run ROS2 bridge with debug
+Run ROS2 bridge with debug and rosapi
 >ros2 run rosbridge_server rosbridge_websocket DEBUG=ros2-web-bridge* node bin/rosbridge.js
-
 >ros2 run rosapi rosapi_node
 
 
