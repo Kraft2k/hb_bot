@@ -21,11 +21,15 @@ ROS2 Install
 >colcon build --symlink-install --packages-select ros2_hoverboard_hardware
 
 
+Normal run
+----------
 On bot run
 >ros2 launch hb_bot launch_robot.launch.py
 
-On host run
->ros2 launch hb_bot gamepad.launch.py
+On host run - set use_local_gamepad false when running with "ros-ui-react"
+>ros2 launch hb_bot gamepad.launch.py use_local_gamepad:=true
+
+
 
 Run Teleop twist stand alone
 >ros2 run teleop_twist_keyboard teleop_twist_keyboard -r /cmd_vel:=/diff_cont/cmd_vel_unstamped
@@ -87,7 +91,27 @@ Run ROS2 bridge with debug and rosapi
 >ros2 run rosbridge_server rosbridge_websocket DEBUG=ros2-web-bridge* node bin/rosbridge.js
 >ros2 run rosapi rosapi_node
 
+RPi
+===
 
+Monitor WiFi strength
+>watch -n1 iwconfig
 
+List available WiFi
+>nmcli dev wifi
+or
+>sudo iwlist wlp1s0 scan | grep ESSID
 
+Tablet Teleop
+=============
+RPi
+>ros2 run web_video_server web_video_server
+>ros2 launch hb_bot launch_robot.launch.py
 
+Dev
+Disable gamepad_node in gamepad.launch.py 
+>ros2 launch hb_bot gamepad.launch.py
+>ros2 run rosbridge_server rosbridge_websocket rosbridge_socket rosbridge_socket.py
+Run web-server
+>cd ws_dev/src/ros_ui-react/example
+>npm start
