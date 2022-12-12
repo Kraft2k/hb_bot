@@ -102,15 +102,15 @@ List available WiFi
 or
 >sudo iwlist wlp1s0 scan | grep ESSID
 
-Tablet Teleop
-=============
+Tablet Teleop ros-ui-react
+==========================
 RPi
 >ros2 run web_video_server web_video_server
 >ros2 launch hb_bot launch_robot.launch.py
 
 Dev
 Disable gamepad_node in gamepad.launch.py 
->ros2 launch hb_bot gamepad.launch.py
+>ros2 launch hb_bot gamepad.launch.py use_local_gamepad:=false
 >ros2 run rosbridge_server rosbridge_websocket rosbridge_socket rosbridge_socket.py
 Run web-server
 >cd ws_dev/src/ros_ui-react/example
