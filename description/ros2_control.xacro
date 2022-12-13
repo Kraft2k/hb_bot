@@ -38,7 +38,8 @@
             <param name="example_param_hw_start_duration_sec">0</param>
             <param name="example_param_hw_stop_duration_sec">3</param>
             <param name="example_param_hw_slowdown">0</param>
-            <param name="hoverboard_port">/dev/ttyUSB1</param>
+<!--            <param name="hoverboard_port">/dev/ttyUSB0</param> -->
+            <param name="hoverboard_port">/dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.3.2:1.0-port0</param> 
             
     
         </hardware>

@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <xacro:property name="chassis_l" value="375"/>
+
     <xacro:include filename="inertial_macros.xacro"/>
 
     <material name="white">
@@ -30,14 +32,21 @@
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link" />
         <child link="chassis"/>
-        <origin xyz="0 0 0"/>
+        <origin xyz="-0.1875 0 0.006"/>
     </joint>
 
     <link name="chassis">
         <visual>
-            <origin xyz="0 0 0"/>
+            <origin xyz="0.1875 0 0.045"/>
             <geometry>
-                <box size=".375 .225 .090"/>
+                <box size="0.375 .225 .090"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <visual>
+            <origin xyz="0.135 0 0.110"/>
+            <geometry>
+                <box size=".145 .200 .040"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -116,28 +125,27 @@
 
 
     <!-- Castor Wheel Link_-->
-    <joint name="castor_wheel_joint" type="continuous"> 
+    <joint name="castor_wheel_joint" type="fixed"> 
         <parent link="base_link" />
         <child link="castor_wheel"/>
-        <origin xyz="0.1 0 -0.065"/>
+        <origin xyz="0.1 0 -0.0"/>
     </joint>
 
     <link name="castor_wheel">
         <visual>    
             <geometry>
-                <sphere radius="0.05"/>
+                <sphere radius="0.09"/>
             </geometry>
             <material name="black"/>
        </visual>
         <collision>    
             <geometry>
-                <sphere radius="0.05"/>
+                <sphere radius="0.09"/>
             </geometry>
        </collision>
-        <xacro:inertial_sphere mass="0.1" radius="0.05">
+        <xacro:inertial_sphere mass="0.1" radius="0.09">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_sphere>
-
     </link>
     <gazebo reference="castor_wheel">
         <material>Gazebo/Black</material>
@@ -147,3 +155,4 @@
 
 
 </robot>
+
