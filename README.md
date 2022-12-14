@@ -48,7 +48,7 @@ Add ROS image transports
 >sudo apt install ros-humble-image-transport-plugins
 
 Check camera
->vcgencmd get_camera
+>vt_cgencmd gecamera
 
 Use to stream camera from pi - test
 >raspistill -k
@@ -57,7 +57,7 @@ Check video for linux
 >v4l2-ctl --list-devices
   
 Run ROS camera standalone  
->ros2 run v4l2_camera v4l2_camera_node --ros-args -p image_size:="[640,480]" -p camera_fram_id:=camera_link_optical
+>ros2 run v4l2_camera v4l2_camera_node --ros-args -p image_size:="[640,480]" -p camera_frame_id:=camera_link_optical
 
 ROS image viewer
 >ros2 run rqt_image_view rqt_image_view
@@ -101,6 +101,10 @@ List available WiFi
 >nmcli dev wifi
 or
 >sudo iwlist wlp1s0 scan | grep ESSID
+
+Driver for RealTek 8188FU USB WiFi dongle
+https://github.com/kelebek333/rtl8188fu
+
 
 Tablet Teleop ros-ui-react
 ==========================
