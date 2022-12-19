@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:property name="chassis_l" value="375"/>
-
     <xacro:include filename="inertial_macros.xacro"/>
+
+
+    <xacro:property name="chassis_l" value="0.375"/>
+
 
     <material name="white">
         <color rgba="1 1 1 1"/>
