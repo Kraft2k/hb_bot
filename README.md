@@ -119,3 +119,11 @@ Disable gamepad_node in gamepad.launch.py
 Run web-server
 >cd ws_dev/src/ros_ui-react/example
 >npm start
+
+
+SLAM
+====
+
+>sudo apt install ros-humble-slam-toolbox
+
+>ros2 launch slam_toolbox online_async_launch.py params_file:=./src/hb_bot/config/mapper_params_online_async.yaml 
