@@ -3,7 +3,7 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.substitutions import LaunchConfiguration
 from launch.conditions import IfCondition
 
@@ -11,6 +11,8 @@ use_local_gamepad = LaunchConfiguration('use_local_gamepad', default=True)
 
 def generate_launch_description():
  
+    package_name = 'hb_bot'
+
     gamepad_params_file = os.path.join(get_package_share_directory('hb_bot'),'config','gamepad.yaml')
 
     gamepad_node = Node(
@@ -37,9 +39,12 @@ def generate_launch_description():
         parameters=[laser_filter_params_file] 
     )
 
+    map_launch_file = os.path.join(get_package_share_directory(package_name),'launch','map.launch.py')
+
     return LaunchDescription([
         gamepad_node,
         teleop_node,
-        laser_filter
+        laser_filter,
+        IncludeLaunchDescription( map_launch_file),       # SLAM map generator
     ])
     

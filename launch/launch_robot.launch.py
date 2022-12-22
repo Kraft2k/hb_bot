@@ -65,6 +65,7 @@ def generate_launch_description():
     )
 
     camera_launch_file = os.path.join(get_package_share_directory(package_name),'launch','camera_robot.launch.py')
+
     ydlidar_launch_file = os.path.join(get_package_share_directory(package_name),'launch','ydlidar.launch.py')
 
     # Launch them all!
