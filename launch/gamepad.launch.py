@@ -18,7 +18,7 @@ def generate_launch_description():
         executable='joy_node',
         parameters=[gamepad_params_file],
         condition=IfCondition(use_local_gamepad)
-            )
+    )
 
     teleop_node = Node(
         package='teleop_twist_joy',
@@ -26,10 +26,20 @@ def generate_launch_description():
         name='teleop_node',
         parameters=[gamepad_params_file],
         remappings=[('/cmd_vel','/diff_cont/cmd_vel_unstamped')]
-            )
+    )
+
+    laser_filter_params_file = os.path.join(get_package_share_directory('hb_bot'),'config','laser_filter_param.yaml')
+
+    laser_filter = Node(
+        package='laser_filters',
+        executable='scan_to_scan_filter_chain',
+        name='laser_filter',
+        parameters=[laser_filter_params_file] 
+    )
 
     return LaunchDescription([
         gamepad_node,
-        teleop_node
+        teleop_node,
+        laser_filter
     ])
     

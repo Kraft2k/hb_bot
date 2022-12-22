@@ -79,6 +79,9 @@ Download ROS2 driver for YLidar
 -------------------------------
 >git clone https://github.com/rekabuk/ydlidar_ros2_driver.git
 
+laser filters
+-------------
+>sudo apt-get install ros-humble-laser-filters
 
 FoxGlove
 ========
