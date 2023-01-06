@@ -9,10 +9,12 @@ from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command
 from launch.event_handlers import OnProcessStart
+from launch.substitutions import LaunchConfiguration
 
 
 from launch_ros.actions import Node
 
+use_web_server_val = LaunchConfiguration('use_camera_web_server', default=False)
 
 
 def generate_launch_description():
@@ -75,7 +77,9 @@ def generate_launch_description():
         delayed_diff_drive_spawner,
         delayed_joint_broad_spawner,
      
-        IncludeLaunchDescription( camera_launch_file),
+        IncludeLaunchDescription( 
+                PythonLaunchDescriptionSource(camera_launch_file), 
+                launch_arguments={'use_camera_web_server':'true'}.items() ),
         IncludeLaunchDescription( ydlidar_launch_file)
    ])
 

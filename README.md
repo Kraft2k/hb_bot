@@ -113,15 +113,17 @@ https://github.com/kelebek333/rtl8188fu
 
 Tablet Teleop ros-ui-react
 ==========================
-RPi
+RPi - old Separate start command lines
 >ros2 run web_video_server web_video_server
->ros2 launch hb_bot launch_robot.launch.py
+>ros2 launch hb_bot launch_robot.launch.py 
+
+RPi - New version will start web_video_server if param set to true
+>ros2 launch hb_bot launch_robot.launch.py use_camera_web_server:=true
 
 Dev
 Disable gamepad_node in gamepad.launch.py 
 >ros2 launch hb_bot gamepad.launch.py use_local_gamepad:=false
 >ros2 run rosbridge_server rosbridge_websocket rosbridge_socket rosbridge_socket.py
-Run web-server (on RPI)
 >cd ~/ros_ui-react/example
 >npm start
 
