@@ -92,6 +92,8 @@ run ROS2 bridge
 
 Run ROS2 bridge with debug and rosapi
 >ros2 run rosbridge_server rosbridge_websocket DEBUG=ros2-web-bridge* node bin/rosbridge.js
+
+Then run the ROS API node
 >ros2 run rosapi rosapi_node
 
 RPi
@@ -119,8 +121,8 @@ Dev
 Disable gamepad_node in gamepad.launch.py 
 >ros2 launch hb_bot gamepad.launch.py use_local_gamepad:=false
 >ros2 run rosbridge_server rosbridge_websocket rosbridge_socket rosbridge_socket.py
-Run web-server
->cd ws_dev/src/ros_ui-react/example
+Run web-server (on RPI)
+>cd ~/ros_ui-react/example
 >npm start
 
 
