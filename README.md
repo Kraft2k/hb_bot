@@ -145,3 +145,9 @@ Pi GPIO https://abyz.me.uk/rpi/pigpio/download.html
 >cd pigpio-master
 >make
 >sudo make install
+
+Using the deamon version otherwise the compiled program has to be run as sudo - which is a pain for ROS
+So we use cronjob to start pigpiod deamon on startup
+>sudo crontab -e 
+The add this line to file
+>@reboot              /usr/bin/chrt -r 99; /usr/local/bin/pigpiod
