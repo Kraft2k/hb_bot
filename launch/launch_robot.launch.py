@@ -66,6 +66,12 @@ def generate_launch_description():
         )
     )
 
+    hb_control = Node(
+        package='hb_ctrl',
+        executable='hb_node'
+    )
+
+
     camera_launch_file = os.path.join(get_package_share_directory(package_name),'launch','camera_robot.launch.py')
 
     ydlidar_launch_file = os.path.join(get_package_share_directory(package_name),'launch','ydlidar.launch.py')
@@ -76,11 +82,11 @@ def generate_launch_description():
         delayed_controller_manager,
         delayed_diff_drive_spawner,
         delayed_joint_broad_spawner,
-     
         IncludeLaunchDescription( 
                 PythonLaunchDescriptionSource(camera_launch_file), 
                 launch_arguments={'use_camera_web_server':'true'}.items() ),
-        IncludeLaunchDescription( ydlidar_launch_file)
+        IncludeLaunchDescription( ydlidar_launch_file),
+        hb_control
    ])
 
 

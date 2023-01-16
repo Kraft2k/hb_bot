@@ -134,3 +134,14 @@ SLAM
 >sudo apt install ros-humble-slam-toolbox
 
 >ros2 launch slam_toolbox online_async_launch.py params_file:=./src/hb_bot/config/mapper_params_online_async.yaml 
+
+
+RPI GPIO
+========
+Pi GPIO https://abyz.me.uk/rpi/pigpio/download.html
+
+>wget https://github.com/joan2937/pigpio/archive/master.zip
+>unzip master.zip
+>cd pigpio-master
+>make
+>sudo make install
