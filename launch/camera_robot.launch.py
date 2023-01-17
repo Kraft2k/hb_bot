@@ -6,9 +6,9 @@ from launch.substitutions import LaunchConfiguration
 from launch.conditions import IfCondition
 from launch.actions import DeclareLaunchArgument
 
-use_web_server = LaunchConfiguration ('use_camera_web_server', default=False)
 
 def generate_launch_description():
+    use_web_server = LaunchConfiguration ('use_camera_web_server', default='false')
 
 
     camera_server = Node(

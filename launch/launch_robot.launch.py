@@ -14,10 +14,10 @@ from launch.substitutions import LaunchConfiguration
 
 from launch_ros.actions import Node
 
-use_web_server_val = LaunchConfiguration('use_camera_web_server', default=False)
-
 
 def generate_launch_description():
+    #Set to ture to launch web server for Josh Newans ros_ui usage
+    use_web_server_val = LaunchConfiguration('use_camera_web_server', default='false')
 
     package_name = 'hb_bot'
 
@@ -79,14 +79,14 @@ def generate_launch_description():
     # Launch them all!
     return LaunchDescription([
         rsp,
+        hb_control,
         delayed_controller_manager,
         delayed_diff_drive_spawner,
         delayed_joint_broad_spawner,
         IncludeLaunchDescription( 
                 PythonLaunchDescriptionSource(camera_launch_file), 
-                launch_arguments={'use_camera_web_server':'true'}.items() ),
+                launch_arguments={'use_camera_web_server':use_web_server_val}.items() ),
         IncludeLaunchDescription( ydlidar_launch_file),
-        hb_control
    ])
 
 

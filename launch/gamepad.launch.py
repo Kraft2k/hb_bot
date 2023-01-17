@@ -11,10 +11,10 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.substitutions import LaunchConfiguration
 from launch.conditions import IfCondition
 
-use_local_gamepad = LaunchConfiguration('use_local_gamepad', default=True)
 
 def generate_launch_description():
- 
+    use_local_gamepad = LaunchConfiguration('use_local_gamepad', default=true)
+
     package_name = 'hb_bot'
 
     gamepad_params_file = os.path.join(get_package_share_directory('hb_bot'),'config','gamepad.yaml')
