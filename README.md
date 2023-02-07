@@ -151,3 +151,20 @@ So we use cronjob to start pigpiod deamon on startup
 >sudo crontab -e 
 The add this line to file
 >@reboot              /usr/bin/chrt -r 99; /usr/local/bin/pigpiod
+
+RPI I2C
+=======
+Removed R8 and R9 5V pullups on BNO055 to prevent damage to RPI4. 
+I believe RPI4 has on board 1K8 pullups to 3v3
+>https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/downloads
+
+Need the driver for I2C
+>sudo apt-get install -y i2c-tools libi2c-dev
+
+Use this to check for I2C devices on bus 1
+>sudo i2cdetect -y 1
+
+>https://github.com/fm4dd/pi-bno055
+
+ROS2 driver
+>https://github.com/bdholt1/ros2_bno055_sensor

@@ -57,6 +57,9 @@
 	<sensor name="Temperature">
 	   <state_interface name="temperature"/>
 	</sensor>
+	<sensor name="Connected">
+	   <state_interface name="connected"/>
+	</sensor>
     </ros2_control>
 
     <gazebo>
