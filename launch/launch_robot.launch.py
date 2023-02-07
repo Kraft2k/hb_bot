@@ -66,6 +66,7 @@ def generate_launch_description():
         )
     )
 
+    # Used to drive relays to control Motor driver
     hb_control = Node(
         package='hb_ctrl',
         executable='hb_node'
