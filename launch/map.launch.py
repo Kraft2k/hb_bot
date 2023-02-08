@@ -11,8 +11,7 @@ def generate_launch_description():
     map = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('slam_toolbox'),'launch','online_async_launch.py')]),
-                    launch_arguments={'params_file': './src/hb_bot/config/mapper_params_online_async.yaml',
-                    'remap': 'from=""/scan"" to=""/scan_filtered""'}.items()
+                    launch_arguments={'params_file': './src/hb_bot/config/mapper_params_online_async.yaml'}.items()
             )
 
 
