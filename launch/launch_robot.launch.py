@@ -77,6 +77,8 @@ def generate_launch_description():
 
     ydlidar_launch_file = os.path.join(get_package_share_directory(package_name),'launch','ydlidar.launch.py')
 
+    map_launch_file = os.path.join(get_package_share_directory(package_name),'launch','map.launch.py')
+
     # Launch them all!
     return LaunchDescription([
         rsp,
@@ -88,6 +90,8 @@ def generate_launch_description():
                 PythonLaunchDescriptionSource(camera_launch_file), 
                 launch_arguments={'use_camera_web_server':use_web_server_val}.items() ),
         IncludeLaunchDescription( ydlidar_launch_file),
+        IncludeLaunchDescription( map_launch_file),       # SLAM map generator
+        
    ])
 
 

@@ -34,21 +34,8 @@ def generate_launch_description():
         remappings=[('/cmd_vel','/diff_cont/cmd_vel_unstamped')]
     )
 
-    laser_filter_params_file = os.path.join(get_package_share_directory('hb_bot'),'config','laser_filter_param.yaml')
-
-    laser_filter = Node(
-        package='laser_filters',
-        executable='scan_to_scan_filter_chain',
-        name='laser_filter',
-        parameters=[laser_filter_params_file] 
-    )
-
-    map_launch_file = os.path.join(get_package_share_directory(package_name),'launch','map.launch.py')
-
     return LaunchDescription([
         gamepad_node,
-        teleop_node,
-        laser_filter,        
-        IncludeLaunchDescription( map_launch_file),       # SLAM map generator
+        teleop_node
     ])
     
