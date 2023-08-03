@@ -11,7 +11,7 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.substitutions import LaunchConfiguration
 from launch.conditions import IfCondition, UnlessCondition
 
-use_local_gamepad = LaunchConfiguration('use_local_gamepad', default=True)
+use_local_gamepad = LaunchConfiguration('use_local_gamepad', default=False)
 use_foxglove = LaunchConfiguration('use_foxglove', default=True)
 
 def generate_launch_description():

@@ -169,6 +169,7 @@ Use this to check for I2C devices on bus 1
 ROS2 driver
 >https://github.com/bdholt1/ros2_bno055_sensor
 
+
 Need to rotate bot in 3 dimensions to acheive calibration - need to load from file somehow???
 
 FOXGLOVE
@@ -179,4 +180,15 @@ Create extension
 
 Install "Yarn" to compile extension
 >sudo apt-get install yarn
+=======
+
+
+Foxglove
+========
+
+
+After getting extension from git, use this to get all the libraries
+>npm install 
+
+
 
